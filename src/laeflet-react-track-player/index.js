@@ -307,7 +307,7 @@ class LeafletReactTrackPlayer extends MapLayer {
         const indexPoint = Number(
           (activePosition * (this.state.track.length / 100)).toFixed()
         );
-        this.leafletElement.snakePolyline.changePosition(indexPoint);
+        this.leafletElement.snakePolyline.changePosition(indexPoint + 1);
         break;
       }
       case "time": {
@@ -429,19 +429,19 @@ class LeafletReactTrackPlayer extends MapLayer {
         {this.props.useControl ? (
           <div className="leaflet-control leaflet-react-track-player">
             <div className="tp-buttons">
-              <button
+              {/* <button
                 className="tp_button prev"
                 onClick={() => this.prevStep()}
                 alt="Prev"
                 disabled={this.state.activeStream}
-              />
+              />*/}
               <button
                 className={`tp_button ${this.state.active ? "pause" : "play"}`}
                 onClick={() => this.tooglePlay()}
                 alt={this.state.active ? "PaUse" : "Play"}
                 disabled={this.state.activeStream}
               />
-              {!this.props.streamData ? (
+              {/* {!this.props.streamData ? (
                 <button
                   alt="Stop"
                   className="tp_button stop"
@@ -461,7 +461,7 @@ class LeafletReactTrackPlayer extends MapLayer {
                 onClick={() => this.nextStep()}
                 alt={"Next"}
                 disabled={this.state.activeStream}
-              />
+              />*/}
               <button
                 className="tp_button speed"
                 onClick={() =>
